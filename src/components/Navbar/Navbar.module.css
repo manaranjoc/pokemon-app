@@ -1,0 +1,42 @@
+
+.navbar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: whitesmoke;
+}
+
+.linksContainer {
+    display: flex;
+    align-items: baseline;
+}
+
+.title {
+    display: inline-block;
+    font-weight: normal;
+}
+
+.links {
+    padding: 0 1rem;
+}
+
+.link {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.link a {
+    text-decoration: none;
+    color: black;
+}
+
+.searchbar {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px rgba(0, 0, 0, 0.2) solid;
+    font-size: 1rem;
+}
+.searchbar::placeholder {
+    opacity: 0.7;
+}
