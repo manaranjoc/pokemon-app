@@ -1,21 +1,15 @@
+import {createReducer} from "@reduxjs/toolkit";
+import {fetchPokemons} from "./actions";
+
 const initialState = {
-    pokemons: [
-        {
-            name: "BULBASAUR",
-            image: "https://via.placeholder.com/150",
-        },
-        {
-            name: "BULBASAUR",
-            image: "https://via.placeholder.com/150",
-        }
-    ]
+    pokemons: []
 }
 
-function pokemonReducer (state = initialState, action) {
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
+const pokemonReducer = createReducer(initialState, (builder) => {
+    builder
+        .addCase(fetchPokemons.fulfilled, (state, action) => {
+            state.pokemons = action.payload
+        })
+})
 
 export default pokemonReducer;

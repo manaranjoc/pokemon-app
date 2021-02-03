@@ -1,4 +1,6 @@
+import React from "react"
 import styles from "./Pokemon.module.css"
+
 export default function Pokemon({image, name}) {
     return (
         <div>
