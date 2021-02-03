@@ -1,16 +1,18 @@
 import React from 'react'
-import { BrowserRouter as Router } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
+import {BrowserRouter as Router} from "react-router-dom";
+import {Provider} from "react-redux"
+import Navbar from "./components/Navbar";
+import store from "./store";
+import {PokemonList} from "./features/PokemonList";
 
 function App() {
-  return (
-      <Router>
-          <Navbar/>
-          <div>
+    return (
+        <Router>
+            <Navbar/>
+            <PokemonList/>
 
-          </div>
-      </Router>
-  );
+        </Router>
+    );
 }
 
 export default App;

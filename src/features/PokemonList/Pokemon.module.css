@@ -1,0 +1,13 @@
+
+.pokemonImage {
+    width: 100%;
+    margin: 0;
+    display: block;
+}
+
+.pokemonName {
+    text-align: center;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 1rem;
+}
