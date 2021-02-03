@@ -3,6 +3,10 @@ const initialState = {
         {
             name: "BULBASAUR",
             image: "https://via.placeholder.com/150",
+        },
+        {
+            name: "BULBASAUR",
+            image: "https://via.placeholder.com/150",
         }
     ]
 }
