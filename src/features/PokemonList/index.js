@@ -1,17 +1,22 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import Pokemon from "./Pokemon";
 import styles from "./PokemonList.module.css"
+import {fetchPokemons} from "./actions";
 
 export function PokemonList() {
 
     const { pokemons } = useSelector(state => state.pokemon)
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(fetchPokemons(0))
+    }, [dispatch])
+
     return (
         <div className={styles.pokemonList}>
             { pokemons.map( pokemon => (
-                <Pokemon image={pokemon.image} name={pokemon.name}/>
+                <Pokemon key={pokemon.name} image={pokemon.image} name={pokemon.name}/>
             )) }
         </div>
     )
