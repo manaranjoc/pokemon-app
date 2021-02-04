@@ -1,7 +1,18 @@
 import {Link} from "react-router-dom";
 import styles from "./Navbar.module.css";
+import {useDispatch} from "react-redux";
+import {filterPokemons} from "../../features/PokemonList/actions";
+import {useRef} from "react";
 
 function Navbar() {
+
+    const dispatch = useDispatch();
+
+    const inputFilter = useRef(null)
+
+    const filter = () => {
+        dispatch(filterPokemons(inputFilter.current.value))
+    }
 
     return (
         <nav className={styles.navbar}>
@@ -14,7 +25,7 @@ function Navbar() {
                 </ul>
             </div>
             <div>
-                <input type="text" placeholder="Search" className={styles.searchbar}/>
+                <input ref={inputFilter} type="text" placeholder="Search" className={styles.searchbar} onChange={filter}/>
             </div>
         </nav>
     )

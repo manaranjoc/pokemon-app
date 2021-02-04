@@ -6,7 +6,7 @@ import {fetchPokemons} from "./actions";
 
 export function PokemonList() {
 
-    const { pokemons } = useSelector(state => state.pokemon)
+    const { pokemonsFiltered } = useSelector(state => state.pokemon)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export function PokemonList() {
 
     return (
         <div className={styles.pokemonList}>
-            { pokemons.map( pokemon => (
+            { pokemonsFiltered.map( pokemon => (
                 <Pokemon key={pokemon.name} image={pokemon.url.match(/\d+/g)[1]} name={pokemon.name}/>
             )) }
         </div>

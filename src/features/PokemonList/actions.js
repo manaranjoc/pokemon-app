@@ -1,4 +1,4 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import {createAction, createAsyncThunk} from "@reduxjs/toolkit";
 import {pokemonsPaginated} from "../../API/pokemonAPI";
 
 export const fetchPokemons = createAsyncThunk(
@@ -7,4 +7,12 @@ export const fetchPokemons = createAsyncThunk(
         const response = await pokemonsPaginated(page)
         console.log(response.data.results)
         return response.data.results
-    })
+    });
+
+export const filterPokemons = createAction('pokemons/filter', function prepare(filterBy) {
+    return {
+        payload: {
+            filterBy
+        }
+    }
+})

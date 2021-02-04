@@ -11,3 +11,9 @@
     margin: 0;
     padding: 1rem;
 }
+
+.pokemonContainer {
+    border: 1px rgba(0, 0, 0, 0.2) solid;
+    border-radius: 10px;
+    overflow: hidden;
+}
