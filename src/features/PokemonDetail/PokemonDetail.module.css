@@ -52,3 +52,27 @@ hr {
     margin: 1rem 2rem;
     font-size: 1.5rem;
 }
+
+.closeButton {
+    background: transparent;
+    border: 0;
+    font-size: 1.5rem;
+    margin: 0 2rem;
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.comparisonButton {
+    background: transparent;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    cursor: pointer;
+}

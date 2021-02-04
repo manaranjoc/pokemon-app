@@ -3,6 +3,7 @@ import {BrowserRouter as Router} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import {PokemonList} from "./features/PokemonList";
 import {PokemonDetail} from "./features/PokemonDetail";
+import {PokemonComparison} from "./features/PokemonComparison";
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
             <Navbar/>
             <PokemonList/>
             <PokemonDetail/>
+            <PokemonComparison/>
         </Router>
     );
 }

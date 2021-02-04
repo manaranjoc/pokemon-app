@@ -2,6 +2,7 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import styles from "./PokemonDetail.module.css";
 import {closeDetail} from "./actions";
+import {addPokemonToComparison} from "../PokemonComparison/action";
 
 
 export function PokemonDetail() {
@@ -16,6 +17,11 @@ export function PokemonDetail() {
         }
     }
 
+    const addComparison = () => {
+        dispatcher(addPokemonToComparison(selectedPokemon))
+        dispatcher(closeDetail())
+    }
+
 
     let content = null;
 
@@ -24,8 +30,11 @@ export function PokemonDetail() {
         content = (
             <div className={styles.modalBackground} onClick={closeModal} id="background">
                 <div className={styles.modal}>
-                    <div>
+                    <div className={styles.header}>
                         <h3 className={styles.name}>{selectedPokemon.name.toUpperCase()}</h3>
+                        <button aria-label="Close" onClick={closeModal} id="close-button" className={styles.closeButton}>
+                            <span aria-hidden="true" id="close-button">x</span>
+                        </button>
                     </div>
                     <hr/>
                     <div className={styles.descriptionContainer}>
@@ -39,13 +48,13 @@ export function PokemonDetail() {
                                 <div className={styles.characteristics}>
                                     <h4>Height</h4>
                                     <p>
-                                        {selectedPokemon.height}
+                                        {selectedPokemon.height} m
                                     </p>
                                 </div>
                                 <div className={styles.characteristics}>
                                     <h4>Weight</h4>
                                     <p>
-                                        {selectedPokemon.weight}
+                                        {selectedPokemon.weight} kg
                                     </p>
                                 </div>
                                 <div className={styles.characteristics}>
@@ -64,6 +73,9 @@ export function PokemonDetail() {
                                         })}
                                     </ul>
                                 </div>
+                                <button className={styles.comparisonButton} onClick={addComparison}>
+                                    Add to comparison
+                                </button>
                             </div>
                             
                         </div>
