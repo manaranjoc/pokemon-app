@@ -1,0 +1,19 @@
+.modal {
+    position: fixed;
+    right: 0;
+    top: 4rem;
+    text-align: center;
+    background: white;
+    border: 1px rgba(0,0,0,0.4) solid;
+    border-radius: 5px;
+}
+
+.modal h5 {
+    color: darkgray;
+    margin: 0.2rem 0.5rem;
+}
+
+.modal h6 {
+    margin: 0.5rem;
+    font-size: 1rem;
+}

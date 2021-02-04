@@ -1,6 +1,7 @@
 import styles from "./PokemonComparison.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {closeComparisonPokemons} from "./action";
+import {PokemonPrompt} from "./PokemonPrompt";
 
 
 export function PokemonComparison() {
@@ -79,6 +80,7 @@ export function PokemonComparison() {
     return (
         <div>
             {content}
+            <PokemonPrompt/>
         </div>
     )
 }
