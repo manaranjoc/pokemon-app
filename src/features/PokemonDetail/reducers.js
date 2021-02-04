@@ -1,5 +1,5 @@
 import {createReducer} from "@reduxjs/toolkit";
-import {selectPokemon} from "./actions";
+import {closeDetail, selectPokemon} from "./actions";
 
 const initialState = {
     selectedPokemon: null,
@@ -12,6 +12,9 @@ const pokemonDetailReducer = createReducer(initialState, builder => {
         })
         .addCase(selectPokemon.rejected, (state, action) => {
             console.log("Rejected")
+        })
+        .addCase(closeDetail, (state, action) => {
+            state.selectedPokemon = null;
         })
 })
 

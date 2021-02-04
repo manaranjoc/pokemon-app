@@ -1,11 +1,20 @@
 import React from "react";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import styles from "./PokemonDetail.module.css";
+import {closeDetail} from "./actions";
 
 
 export function PokemonDetail() {
 
     const {selectedPokemon} = useSelector(state => state.pokemonSelected);
+
+    const dispatcher = useDispatch();
+
+    const closeModal = (e) => {
+        if (e.target.id !== '') {
+            dispatcher(closeDetail())
+        }
+    }
 
 
     let content = null;
@@ -13,7 +22,7 @@ export function PokemonDetail() {
 
     if (selectedPokemon !== null) {
         content = (
-            <div className={styles.modalBackground}>
+            <div className={styles.modalBackground} onClick={closeModal} id="background">
                 <div className={styles.modal}>
                     <div>
                         <h3 className={styles.name}>{selectedPokemon.name.toUpperCase()}</h3>

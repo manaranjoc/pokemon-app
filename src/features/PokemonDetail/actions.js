@@ -1,4 +1,4 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
+import {createAction, createAsyncThunk} from "@reduxjs/toolkit";
 import {getPokemon} from "../../API/pokemonAPI";
 
 
@@ -17,3 +17,5 @@ export const selectPokemon = createAsyncThunk(
             image: pokemon.data.sprites.front_default,
         }
     });
+
+export const closeDetail = createAction("pokemons/close");

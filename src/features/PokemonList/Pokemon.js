@@ -10,7 +10,6 @@ export default function Pokemon({image, name}) {
     const dispatcher = useDispatch();
 
     const select = () => {
-        console.log("dispatching")
         dispatcher(selectPokemon(image));
     }
 
