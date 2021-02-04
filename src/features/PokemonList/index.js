@@ -16,7 +16,7 @@ export function PokemonList() {
     return (
         <div className={styles.pokemonList}>
             { pokemons.map( pokemon => (
-                <Pokemon key={pokemon.name} image={pokemon.image} name={pokemon.name}/>
+                <Pokemon key={pokemon.name} image={pokemon.url.match(/\d+/g)[1]} name={pokemon.name}/>
             )) }
         </div>
     )
