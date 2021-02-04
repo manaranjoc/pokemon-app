@@ -1,11 +1,10 @@
 import {createAction, createAsyncThunk} from "@reduxjs/toolkit";
-import {pokemonsPaginated} from "../../API/pokemonAPI";
+import {getPokemons} from "../../API/pokemonAPI";
 
 export const fetchPokemons = createAsyncThunk(
     'pokemons/fetch',
     async (page, thunkAPI) => {
-        const response = await pokemonsPaginated(page)
-        console.log(response.data.results)
+        const response = await getPokemons(page)
         return response.data.results
     });
 
