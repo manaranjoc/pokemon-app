@@ -13,6 +13,7 @@ export const selectPokemon = createAsyncThunk(
             stats: pokemon.data.stats,
             abilities: pokemon.data.abilities,
             types: pokemon.data.types,
-            description: description.data.flavor_text_entries[0].flavor_text
+            description: description.data.flavor_text_entries[0].flavor_text,
+            image: pokemon.data.sprites.front_default,
         }
     });

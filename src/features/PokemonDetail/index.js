@@ -16,41 +16,47 @@ export function PokemonDetail() {
             <div className={styles.modalBackground}>
                 <div className={styles.modal}>
                     <div>
-                        <h3>{selectedPokemon.name}</h3>
+                        <h3 className={styles.name}>{selectedPokemon.name.toUpperCase()}</h3>
                     </div>
                     <hr/>
-                    <div>
-                        {selectedPokemon.description}
-                    </div>
-                    <hr/>
-                    <div>
+                    <div className={styles.descriptionContainer}>
+                        <img src={selectedPokemon.image} alt={selectedPokemon.name} className={styles.pokemonImage}/>
                         <div>
-                            <h4>Height</h4>
-                            <p>
-                                {selectedPokemon.height}
-                            </p>
-                        </div>
-                        <div>
-                            <h4>Weight</h4>
-                            <p>
-                                {selectedPokemon.weight}
-                            </p>
-                        </div>
-                        <div>
-                            <h4>Abilities</h4>
-                            <ul>
-                                {selectedPokemon.abilities.map((ability) => {
-                                    return (<li key={ability.slot}>{ability.ability.name}</li>)
-                                })}
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Type</h4>
-                            <ul>
-                                {selectedPokemon.types.map((type) => {
-                                    return (<li key={type.slot}>{type.type.name}</li>)
-                                })}
-                            </ul>
+                            <div>
+                                {selectedPokemon.description}
+                            </div>
+                            <hr/>
+                            <div>
+                                <div className={styles.characteristics}>
+                                    <h4>Height</h4>
+                                    <p>
+                                        {selectedPokemon.height}
+                                    </p>
+                                </div>
+                                <div className={styles.characteristics}>
+                                    <h4>Weight</h4>
+                                    <p>
+                                        {selectedPokemon.weight}
+                                    </p>
+                                </div>
+                                <div className={styles.characteristics}>
+                                    <h4>Abilities</h4>
+                                    <ul>
+                                        {selectedPokemon.abilities.map((ability) => {
+                                            return (<li key={ability.slot}>{ability.ability.name}</li>)
+                                        })}
+                                    </ul>
+                                </div>
+                                <div className={styles.characteristics}>
+                                    <h4>Type</h4>
+                                    <ul>
+                                        {selectedPokemon.types.map((type) => {
+                                            return (<li key={type.slot}>{type.type.name}</li>)
+                                        })}
+                                    </ul>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <hr/>

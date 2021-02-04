@@ -16,3 +16,39 @@
     width: 50vw;
     border-radius: 10px;
 }
+
+hr {
+    opacity: 0.2;
+}
+
+.characteristics {
+    display: inline-block;
+    width: 25%;
+    margin: 1rem 0;
+}
+
+.characteristics h4,
+.characteristics p{
+    text-align: center;
+    margin: 0.3rem 0;
+}
+
+.characteristics ul {
+    margin: 0.3rem 0;
+}
+
+.pokemonImage {
+    float: left;
+    margin: 0.3rem 2rem;
+    width: 20vw;
+}
+
+.descriptionContainer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.name {
+    margin: 1rem 2rem;
+    font-size: 1.5rem;
+}
