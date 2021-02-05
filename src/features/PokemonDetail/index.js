@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import styles from "./PokemonDetail.module.css";
 import {closeDetail} from "./actions";
 import {addPokemonToComparison} from "../PokemonComparison/action";
+import Chart from "chart.js"
 
 
 export function PokemonDetail() {
@@ -10,6 +11,36 @@ export function PokemonDetail() {
     const {selectedPokemon} = useSelector(state => state.pokemonSelected);
 
     const dispatcher = useDispatch();
+
+    const chart = useRef();
+
+    useEffect(() => {
+        if (selectedPokemon !== null) {
+            const ctx = chart.current.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: selectedPokemon.stats.map(stat => stat.stat.name),
+                    datasets: [{
+                        label: '',
+                        data: selectedPokemon.stats.map(stat => stat.base_stat),
+                        backgroundColor: selectedPokemon.color,
+                    }]
+                },
+                options: {
+                    legend: {display: false},
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            })
+
+        }
+    }, [selectedPokemon])
 
     const closeModal = (e) => {
         if (e.target.id !== '') {
@@ -81,7 +112,7 @@ export function PokemonDetail() {
                         </div>
                     </div>
                     <hr/>
-
+                    <canvas ref={chart} width="100%" height="25vh"></canvas>
                 </div>
             </div>
         );
