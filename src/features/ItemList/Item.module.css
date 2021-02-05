@@ -1,0 +1,21 @@
+
+.itemImage {
+    width: 100%;
+    margin: 0;
+    display: block;
+}
+
+.itemName {
+    text-align: center;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 1rem;
+}
+
+.itemContainer {
+    border: 1px rgba(0, 0, 0, 0.2) solid;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+

@@ -46,6 +46,10 @@
     opacity: 0.7;
 }
 
+.navActive {
+    border-bottom: 2px black solid;
+}
+
 @media (min-width: 500px) {
     .navbar {
         display: flex;

@@ -1,5 +1,6 @@
 import {createReducer} from "@reduxjs/toolkit";
-import {fetchPokemons, filterPokemons} from "./actions";
+import {disableFilter, fetchPokemons, filterPokemons} from "./actions";
+import {act} from "@testing-library/react";
 
 const initialState = {
     pokemons: [],
@@ -22,12 +23,15 @@ const pokemonReducer = createReducer(initialState, (builder) => {
             state.isLoading = true;
         })
         .addCase(filterPokemons, (state, action) => {
-            if (action.payload.filterBy === null) {
+            if (action.payload.filterBy === null || action.payload.filterBy === '') {
                 state.filtering = false;
             } else {
                 state.filtering = true;
             }
             state.pokemonsFiltered = state.pokemons.filter((pokemon) => pokemon.name.includes(action.payload.filterBy))
+        })
+        .addCase(disableFilter, (state, action) => {
+            state.filtering = false;
         })
 })
 

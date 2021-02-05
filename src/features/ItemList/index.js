@@ -1,13 +1,13 @@
 import React, {useEffect, useRef, useCallback} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import Pokemon from "./Pokemon";
-import styles from "./PokemonList.module.css"
-import {fetchPokemons} from "./actions";
-import {disableFilter} from "../ItemList/actions";
+import Item from "./Item";
+import styles from "./ItemList.module.css"
+import {fetchItems} from "./actions";
+import {disableFilter} from "../PokemonList/actions";
 
-export function PokemonList() {
+export function ItemList() {
 
-    const { page, isLoading, pokemonsFiltered, filtering } = useSelector(state => state.pokemon)
+    const { page, isLoading, itemsFiltered, filtering } = useSelector(state => state.items)
     const dispatch = useDispatch();
 
     const scrollRef = useRef(null);
@@ -18,7 +18,7 @@ export function PokemonList() {
     const handleScroll = useCallback((entities, observer) => {
         const target = entities[0];
         if (target.isIntersecting && !isLoading && !filtering) {
-            dispatch(fetchPokemons(actualPage.current))
+            dispatch(fetchItems(actualPage.current))
         }
     }, [dispatch, isLoading, filtering])
 
@@ -48,9 +48,9 @@ export function PokemonList() {
 
     return (
         <div>
-            <div className={styles.pokemonList}>
-                { pokemonsFiltered.map( (pokemon, index) => (
-                    <Pokemon key={index} image={pokemon.url.match(/\d+/g)[1]} name={pokemon.name}/>
+            <div className={styles.itemList}>
+                { itemsFiltered.map( (item, index) => (
+                    <Item key={index} image={item.name} name={item.name}/>
                 )) }
             </div>
             <div ref={scrollRef}>

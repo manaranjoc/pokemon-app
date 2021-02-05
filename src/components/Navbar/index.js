@@ -1,17 +1,23 @@
-import {Link} from "react-router-dom";
+import {NavLink, Route} from "react-router-dom";
 import styles from "./Navbar.module.css";
 import {useDispatch} from "react-redux";
 import {filterPokemons} from "../../features/PokemonList/actions";
 import {useRef} from "react";
+import {filterItems} from "../../features/ItemList/actions";
 
 function Navbar() {
 
     const dispatch = useDispatch();
 
-    const inputFilter = useRef(null)
+    const inputFilterPokemons = useRef(null);
+    const inputFilterItems = useRef(null);
 
-    const filter = () => {
-        dispatch(filterPokemons(inputFilter.current.value))
+    const filterPokemonsInput = () => {
+        dispatch(filterPokemons(inputFilterPokemons.current.value))
+    }
+
+    const filterItemsInput = () => {
+        dispatch(filterItems(inputFilterItems.current.value))
     }
 
     return (
@@ -20,13 +26,20 @@ function Navbar() {
                 <h3 className={styles.title}>PokéApp</h3>
                 <ul className={styles.links}>
                     <li className={styles.link}>
-                        <Link to="/">Pokemons</Link>
-                        <Link>Items</Link>
+                        <NavLink to="/" activeClassName={styles.navActive} exact>
+                            Pokemons
+                        </NavLink>
+                        <NavLink to='/items' activeClassName={styles.navActive}>Items</NavLink>
                     </li>
                 </ul>
             </div>
             <div>
-                <input ref={inputFilter} type="text" placeholder="Search" className={styles.searchbar} onChange={filter}/>
+                <Route path='/' exact>
+                    <input ref={inputFilterPokemons} type="text" placeholder="Search" className={styles.searchbar} onChange={filterPokemonsInput}/>
+                </Route>
+                <Route path='/items'>
+                    <input ref={inputFilterItems} type="text" placeholder="Search" className={styles.searchbar} onChange={filterItemsInput}/>
+                </Route>
             </div>
         </nav>
     )

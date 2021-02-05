@@ -15,3 +15,5 @@ export const filterPokemons = createAction('pokemons/filter', function prepare(f
         }
     }
 })
+
+export const disableFilter = createAction('pokemons/disableFilter');
