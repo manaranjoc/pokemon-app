@@ -1,7 +1,22 @@
 .pokemonList {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 2rem;
+    grid-template-columns: 1fr;
     row-gap: 2rem;
-    margin: 2rem 9rem;
+    margin: 1rem 1rem 0;
+}
+
+@media(min-width: 500px) {
+    .pokemonList {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+        margin: 2rem 3rem;
+    }
+}
+
+@media(min-width: 800px) {
+    .pokemonList {
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 2rem;
+        margin: 2rem 9rem;
+    }
 }

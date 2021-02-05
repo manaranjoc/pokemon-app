@@ -21,6 +21,7 @@ function Navbar() {
                 <ul className={styles.links}>
                     <li className={styles.link}>
                         <Link to="/">Pokemons</Link>
+                        <Link>Items</Link>
                     </li>
                 </ul>
             </div>

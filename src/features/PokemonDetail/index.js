@@ -61,13 +61,12 @@ export function PokemonDetail() {
         content = (
             <div className={styles.modalBackground} onClick={closeModal} id="background">
                 <div className={styles.modal}>
-                    <div className={styles.header}>
+                    <div className={styles.header} style={{backgroundColor: selectedPokemon.color}}>
                         <h3 className={styles.name}>{selectedPokemon.name.toUpperCase()}</h3>
                         <button aria-label="Close" onClick={closeModal} id="close-button" className={styles.closeButton}>
                             <span aria-hidden="true" id="close-button">x</span>
                         </button>
                     </div>
-                    <hr/>
                     <div className={styles.descriptionContainer}>
                         <img src={selectedPokemon.image} alt={selectedPokemon.name} className={styles.pokemonImage}/>
                         <div>
@@ -75,7 +74,7 @@ export function PokemonDetail() {
                                 {selectedPokemon.description}
                             </div>
                             <hr/>
-                            <div>
+                            <div className={styles.characteristicsContainer}>
                                 <div className={styles.characteristics}>
                                     <h4>Height</h4>
                                     <p>
@@ -112,7 +111,7 @@ export function PokemonDetail() {
                         </div>
                     </div>
                     <hr/>
-                    <canvas ref={chart} width="100%" height="25vh"></canvas>
+                    <canvas ref={chart} width="100%" height="30vh"></canvas>
                 </div>
             </div>
         );

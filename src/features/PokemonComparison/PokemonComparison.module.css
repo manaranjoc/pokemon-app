@@ -13,8 +13,10 @@
 .modal {
     background-color: white;
     opacity: 1;
-    width: 50vw;
+    width: 90vw;
+    height: 90vh;
     border-radius: 10px;
+    overflow: auto;
 }
 
 hr {
@@ -41,13 +43,13 @@ hr {
 }
 
 .pokemonImage {
-    width: 30%;
+    width: 100%;
 }
 
 .imagesContent {
     display: flex;
     justify-content: space-between;
-    margin: 1rem 7rem;
+    margin: 1rem 1rem;
 }
 
 .descriptionContainer {
@@ -68,4 +70,34 @@ hr {
 
 .characteristics:last-child {
     text-align: left;
+}
+
+@media(min-width: 500px) {
+    .modal {
+        width: 70vw;
+        height: 90vh;
+    }
+
+    .pokemonImage {
+        width: 30%;
+    }
+
+    .imagesContent {
+        margin: 1rem 7rem;
+    }
+}
+
+@media(min-width: 800px) {
+
+    .modal {
+        width: 50vw;
+    }
+
+    .pokemonImage {
+        width: 30%;
+    }
+
+    .imagesContent {
+        margin: 1rem 9rem;
+    }
 }

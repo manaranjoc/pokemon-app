@@ -14,8 +14,10 @@
 .modal {
     background-color: white;
     opacity: 1;
-    width: 50vw;
     border-radius: 10px;
+    overflow-y: auto;
+    width: 90vw;
+    height: 90vh;
 }
 
 hr {
@@ -23,8 +25,7 @@ hr {
 }
 
 .characteristics {
-    display: inline-block;
-    width: 25%;
+    display: grid;
     margin: 1rem 0;
 }
 
@@ -36,17 +37,19 @@ hr {
 
 .characteristics ul {
     margin: 0.3rem 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
 }
 
 .pokemonImage {
-    float: left;
-    margin: 0.3rem 2rem;
-    width: 20vw;
+    margin: 0 auto 0.3rem;
+    display: block;
+    width: 60vw;
 }
 
 .descriptionContainer {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 0 0.5rem;
 }
 
 .name {
@@ -60,12 +63,16 @@ hr {
     font-size: 1.5rem;
     margin: 0 2rem;
     cursor: pointer;
+    color: lightgrey;
 }
 
 .header {
+    top: 0;
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    color: lightgrey;
 }
 
 .comparisonButton {
@@ -76,4 +83,57 @@ hr {
     margin-right: auto;
     display: block;
     cursor: pointer;
+}
+
+.graph {
+    width: 90%;
+    height: 30%;
+}
+
+@media(min-width: 500px) {
+    .modal {
+        width: 80vw;
+        height: 90vh;
+    }
+
+    .pokemonImage {
+        float: left;
+        margin: 0.3rem 2rem;
+        width: 20vw;
+    }
+
+    .descriptionContainer {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .characteristicsContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .comparisonButton {
+        grid-column: span 2;
+    }
+
+}
+
+@media(min-width: 800px) {
+    .modal {
+        width: 50vw;
+    }
+
+    .characteristicsContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .comparisonButton {
+        grid-column: span 1;
+    }
+
+    .characteristics {
+        grid-template-columns: 1fr 1fr;
+        margin: 0.2rem;
+    }
 }

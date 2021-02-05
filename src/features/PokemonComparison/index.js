@@ -2,6 +2,9 @@ import styles from "./PokemonComparison.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {closeComparisonPokemons} from "./action";
 import {PokemonPrompt} from "./PokemonPrompt";
+import React, {useEffect, useRef} from "react";
+import Chart from "chart.js";
+import Color from "color"
 
 
 export function PokemonComparison() {
@@ -9,6 +12,41 @@ export function PokemonComparison() {
     const {comparisonPokemons} = useSelector(state => state.pokemonComparison);
 
     const dispatcher = useDispatch()
+
+    const chart = useRef();
+
+    useEffect(() => {
+        if (comparisonPokemons.length === 2) {
+            const ctx = chart.current.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: comparisonPokemons[0].stats.map(stat => stat.stat.name),
+                    datasets: [{
+                            label: comparisonPokemons[0].name,
+                            data: comparisonPokemons[0].stats.map(stat => stat.base_stat),
+                            backgroundColor: comparisonPokemons[0].color,
+                        },
+                        {
+                            label: comparisonPokemons[1].name,
+                            data: comparisonPokemons[1].stats.map(stat => stat.base_stat),
+                            backgroundColor: Color(comparisonPokemons[1].color).alpha(0.5).string(),
+                        },
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            })
+
+        }
+    }, [comparisonPokemons])
 
     const closeComparison = (e) => {
         if (e.target.id !== '') {
@@ -48,7 +86,7 @@ export function PokemonComparison() {
                                 {comparisonPokemons[0].weight} kg
                             </p>
                             {comparisonPokemons[0].abilities.map((ability) => {
-                               return (<p key={ability.slot}>{ability.ability.name}</p>)
+                                return (<p key={ability.slot}>{ability.ability.name}</p>)
                             })}
                         </div>
                         <div className={styles.characteristics}>
@@ -69,6 +107,7 @@ export function PokemonComparison() {
                         </div>
                     </div>
                     <hr/>
+                    <canvas ref={chart} width="100%" height="30vh"></canvas>
 
                 </div>
             </div>
