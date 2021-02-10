@@ -17,6 +17,7 @@ export const selectPokemon = createAsyncThunk(
             color: description.data.color.name,
             image: pokemon.data.sprites.front_default,
         }
-    });
+    }
+);
 
 export const closeDetail = createAction("pokemons/close");

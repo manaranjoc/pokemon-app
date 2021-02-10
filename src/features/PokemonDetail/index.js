@@ -6,7 +6,7 @@ import {addPokemonToComparison} from "../PokemonComparison/action";
 import Chart from "chart.js"
 
 
-export function PokemonDetail() {
+const PokemonDetail = () => {
 
     const {selectedPokemon} = useSelector(state => state.pokemonSelected);
 
@@ -16,8 +16,8 @@ export function PokemonDetail() {
 
     useEffect(() => {
         if (selectedPokemon !== null) {
-            const ctx = chart.current.getContext('2d');
-            new Chart(ctx, {
+            const chartContext = chart.current.getContext('2d');
+            new Chart(chartContext, {
                 type: 'bar',
                 data: {
                     labels: selectedPokemon.stats.map(stat => stat.stat.name),
@@ -42,8 +42,8 @@ export function PokemonDetail() {
         }
     }, [selectedPokemon])
 
-    const closeModal = (e) => {
-        if (e.target.id !== '') {
+    const closeModal = (event) => {
+        if (event.target.id !== '') {
             dispatcher(closeDetail())
         }
     }
@@ -126,3 +126,5 @@ export function PokemonDetail() {
     )
 
 }
+
+export { PokemonDetail };

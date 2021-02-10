@@ -7,7 +7,7 @@ import Chart from "chart.js";
 import Color from "color"
 
 
-export function PokemonComparison() {
+const PokemonComparison = () => {
 
     const {comparisonPokemons} = useSelector(state => state.pokemonComparison);
 
@@ -17,8 +17,8 @@ export function PokemonComparison() {
 
     useEffect(() => {
         if (comparisonPokemons.length === 2) {
-            const ctx = chart.current.getContext('2d');
-            new Chart(ctx, {
+            const chartContext = chart.current.getContext('2d');
+            new Chart(chartContext, {
                 type: 'bar',
                 data: {
                     labels: comparisonPokemons[0].stats.map(stat => stat.stat.name),
@@ -48,8 +48,8 @@ export function PokemonComparison() {
         }
     }, [comparisonPokemons])
 
-    const closeComparison = (e) => {
-        if (e.target.id !== '') {
+    const closeComparison = (event) => {
+        if (event.target.id !== '') {
             dispatcher(closeComparisonPokemons())
         }
     }
@@ -123,3 +123,5 @@ export function PokemonComparison() {
         </div>
     )
 }
+
+export { PokemonComparison };

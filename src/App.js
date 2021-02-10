@@ -6,7 +6,7 @@ import {PokemonDetail} from "./features/PokemonDetail";
 import {PokemonComparison} from "./features/PokemonComparison";
 import {ItemList} from "./features/ItemList";
 
-function App() {
+const App = () => {
     return (
         <Router>
             <Navbar/>

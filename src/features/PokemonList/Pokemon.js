@@ -5,7 +5,7 @@ import {selectPokemon} from "../PokemonDetail/actions";
 
 const URL_IMAGE = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
 
-export default function Pokemon({image, name}) {
+const Pokemon = ({image, name}) => {
 
     const dispatcher = useDispatch();
 
@@ -20,3 +20,5 @@ export default function Pokemon({image, name}) {
         </div>
     )
 }
+
+export default Pokemon;

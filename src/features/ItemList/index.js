@@ -5,7 +5,7 @@ import styles from "./ItemList.module.css"
 import {fetchItems} from "./actions";
 import {disableFilter} from "../PokemonList/actions";
 
-export function ItemList() {
+const ItemList = () => {
 
     const { page, isLoading, itemsFiltered, filtering } = useSelector(state => state.items)
     const dispatch = useDispatch();
@@ -59,3 +59,5 @@ export function ItemList() {
         </div>
     )
 }
+
+export { ItemList };

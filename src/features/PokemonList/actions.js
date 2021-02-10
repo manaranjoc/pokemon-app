@@ -6,9 +6,10 @@ export const fetchPokemons = createAsyncThunk(
     async (page, thunkAPI) => {
         const response = await getPokemons(page)
         return response.data.results
-    });
+    }
+);
 
-export const filterPokemons = createAction('pokemons/filter', function prepare(filterBy) {
+export const filterPokemons = createAction('pokemons/filter', (filterBy) => {
     return {
         payload: {
             filterBy

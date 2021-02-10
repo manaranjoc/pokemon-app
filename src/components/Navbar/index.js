@@ -5,7 +5,7 @@ import {filterPokemons} from "../../features/PokemonList/actions";
 import {useRef} from "react";
 import {filterItems} from "../../features/ItemList/actions";
 
-function Navbar() {
+const Navbar = () => {
 
     const dispatch = useDispatch();
 

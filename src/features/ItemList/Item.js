@@ -3,7 +3,7 @@ import styles from "./Item.module.css"
 
 const URL_IMAGE = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/'
 
-export default function Item({image, name}) {
+const Item = ({image, name}) => {
 
     return (
         <div className={styles.itemContainer}>
@@ -12,3 +12,5 @@ export default function Item({image, name}) {
         </div>
     )
 }
+
+export default Item;

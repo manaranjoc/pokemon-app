@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import style from "./PokemonPrompt.module.css"
 
 
-export function PokemonPrompt() {
+const PokemonPrompt = () => {
 
     const {comparisonPokemons} = useSelector(state => state.pokemonComparison);
 
@@ -27,3 +27,5 @@ export function PokemonPrompt() {
         </React.Fragment>
     )
 }
+
+export { PokemonPrompt };

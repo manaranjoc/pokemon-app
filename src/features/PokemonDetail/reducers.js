@@ -11,7 +11,7 @@ const pokemonDetailReducer = createReducer(initialState, builder => {
             state.selectedPokemon = action.payload
         })
         .addCase(selectPokemon.rejected, (state, action) => {
-            console.log("Rejected")
+            state.selectedPokemon = '';
         })
         .addCase(closeDetail, (state, action) => {
             state.selectedPokemon = null;

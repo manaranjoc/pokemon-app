@@ -6,9 +6,10 @@ export const fetchItems = createAsyncThunk(
     async (page, thunkAPI) => {
         const response = await getItems(page)
         return response.data.results
-    });
+    }
+);
 
-export const filterItems = createAction('items/filter', function prepare(filterBy) {
+export const filterItems = createAction('items/filter', (filterBy) => {
     return {
         payload: {
             filterBy
