@@ -13,6 +13,7 @@ body {
     --secondary-bg-color: #ffffff;
     --text-color: #000000;
     --title-color: #a9a9a9;
+    --subtitle-color: #d3d3d3;
     --border-dark-color: #000000;
     --modal-bg-color: rgba(0, 0, 0, 0.5);
 }

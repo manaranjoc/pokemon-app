@@ -1,5 +1,5 @@
 .modalBackground {
-    background-color: rgba(0,0,0, 0.5);
+    background-color: var(--modal-bg-color);
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -63,7 +63,7 @@ hr {
     font-size: 1.5rem;
     margin: 0 2rem;
     cursor: pointer;
-    color: lightgrey;
+    color: var(--subtitle-color);
 }
 
 .header {
@@ -72,7 +72,7 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    color: lightgrey;
+    color: var(--subtitle-color);
 }
 
 .comparisonButton {

@@ -6,7 +6,7 @@
     background: var(--secondary-bg-color);
     border: 1px var(--modal-bg-color) solid;
     border-radius: 5px;
-    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 2px 4px var(--border-color);
 }
 
 .modal h5 {
