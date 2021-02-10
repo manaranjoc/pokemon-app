@@ -2,8 +2,7 @@ import React from "react"
 import styles from "./Pokemon.module.css"
 import {useDispatch} from "react-redux";
 import {selectPokemon} from "../PokemonDetail/actions";
-
-const URL_IMAGE = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
+const {REACT_APP_IMAGES_POKEMONS: URL_IMAGE} = process.env;
 
 const Pokemon = ({image, name}) => {
 
