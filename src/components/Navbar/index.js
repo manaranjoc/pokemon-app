@@ -25,11 +25,13 @@ function Navbar() {
             <div className={styles.linksContainer}>
                 <h3 className={styles.title}>PokéApp</h3>
                 <ul className={styles.links}>
-                    <li className={styles.link}>
-                        <NavLink to="/" activeClassName={styles.navActive} exact>
+                    <li className={styles.linkContainer}>
+                        <NavLink to="/" activeClassName={styles.navActive} className={styles.link} exact>
                             Pokemons
                         </NavLink>
-                        <NavLink to='/items' activeClassName={styles.navActive}>Items</NavLink>
+                    </li>
+                    <li className={styles.linkContainer}>
+                        <NavLink to='/items' activeClassName={styles.navActive} className={styles.link}>Items</NavLink>
                     </li>
                 </ul>
             </div>

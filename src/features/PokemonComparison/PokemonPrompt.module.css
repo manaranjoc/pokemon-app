@@ -9,12 +9,12 @@
     box-shadow: -2px 2px 4px var(--border-color);
 }
 
-.modal h5 {
+.modalTitle {
     color: var(--title-color);
     margin: 0.2rem 0.5rem;
 }
 
-.modal h6 {
+.modalSubtitle {
     margin: 0.5rem;
     font-size: 1rem;
 }

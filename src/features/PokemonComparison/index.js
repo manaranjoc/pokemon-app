@@ -69,14 +69,14 @@ export function PokemonComparison() {
                             <span aria-hidden="true" id="close-button">x</span>
                         </button>
                     </div>
-                    <hr/>
+                    <hr className={styles.separator}/>
                     <div className={styles.imagesContent}>
                         <img src={comparisonPokemons[0].image} alt={comparisonPokemons[0].name}
                              className={styles.pokemonImage}/>
                         <img src={comparisonPokemons[1].image} alt={comparisonPokemons[1].name}
                              className={styles.pokemonImage}/>
                     </div>
-                    <hr/>
+                    <hr className={styles.separator}/>
                     <div className={styles.descriptionContainer}>
                         <div className={styles.characteristics}>
                             <p>
@@ -106,7 +106,7 @@ export function PokemonComparison() {
                             })}
                         </div>
                     </div>
-                    <hr/>
+                    <hr className={styles.separator}/>
                     <canvas ref={chart} width="100%" height="30vh"></canvas>
 
                 </div>

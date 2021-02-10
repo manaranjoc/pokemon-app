@@ -26,12 +26,13 @@
 .link {
     display: inline-block;
     font-weight: 700;
-}
-
-.link a {
     text-decoration: none;
     color: var(--text-color);
     margin: 0 0.2rem;
+}
+
+.linkContainer {
+    display: inline-block;
 }
 
 .searchbar {

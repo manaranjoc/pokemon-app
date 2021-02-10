@@ -73,31 +73,31 @@ export function PokemonDetail() {
                             <div>
                                 {selectedPokemon.description}
                             </div>
-                            <hr/>
+                            <hr className={styles.separator}/>
                             <div className={styles.characteristicsContainer}>
                                 <div className={styles.characteristics}>
-                                    <h4>Height</h4>
-                                    <p>
+                                    <h4 className={styles.characteristicsTitle}>Height</h4>
+                                    <p className={styles.characteristicsText}>
                                         {selectedPokemon.height} m
                                     </p>
                                 </div>
                                 <div className={styles.characteristics}>
-                                    <h4>Weight</h4>
-                                    <p>
+                                    <h4 className={styles.characteristicsTitle}>Weight</h4>
+                                    <p className={styles.characteristicsText}>
                                         {selectedPokemon.weight} kg
                                     </p>
                                 </div>
                                 <div className={styles.characteristics}>
-                                    <h4>Abilities</h4>
-                                    <ul>
+                                    <h4 className={styles.characteristicsTitle}>Abilities</h4>
+                                    <ul className={styles.characteristicsList}>
                                         {selectedPokemon.abilities.map((ability) => {
                                             return (<li key={ability.slot}>{ability.ability.name}</li>)
                                         })}
                                     </ul>
                                 </div>
                                 <div className={styles.characteristics}>
-                                    <h4>Type</h4>
-                                    <ul>
+                                    <h4 className={styles.characteristicsTitle}>Type</h4>
+                                    <ul className={styles.characteristicsList}>
                                         {selectedPokemon.types.map((type) => {
                                             return (<li key={type.slot}>{type.type.name}</li>)
                                         })}
@@ -110,7 +110,7 @@ export function PokemonDetail() {
                             
                         </div>
                     </div>
-                    <hr/>
+                    <hr className={styles.separator}/>
                     <canvas ref={chart} width="100%" height="30vh"></canvas>
                 </div>
             </div>

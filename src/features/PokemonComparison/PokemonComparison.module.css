@@ -19,7 +19,7 @@
     overflow: auto;
 }
 
-hr {
+.separator {
     opacity: 0.2;
 }
 

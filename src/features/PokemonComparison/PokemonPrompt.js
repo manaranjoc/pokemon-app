@@ -12,9 +12,9 @@ export function PokemonPrompt() {
     if (comparisonPokemons.length === 1) {
         modal = (
             <div className={style.modal}>
-                <h5>Comparing pokemon</h5>
+                <h5 className={style.modalTitle}>Comparing pokemon</h5>
                 <hr/>
-                <h6>{comparisonPokemons[0].name.toUpperCase()}</h6>
+                <h6 className={style.modalSubtitle}>{comparisonPokemons[0].name.toUpperCase()}</h6>
             </div>
         )
     } else {
