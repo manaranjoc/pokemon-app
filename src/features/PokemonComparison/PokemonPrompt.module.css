@@ -3,14 +3,14 @@
     right: 0;
     top: 4rem;
     text-align: center;
-    background: white;
-    border: 1px rgba(0,0,0,0.4) solid;
+    background: var(--secondary-bg-color);
+    border: 1px var(--modal-bg-color) solid;
     border-radius: 5px;
     box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .modal h5 {
-    color: darkgray;
+    color: var(--title-color);
     margin: 0.2rem 0.5rem;
 }
 
