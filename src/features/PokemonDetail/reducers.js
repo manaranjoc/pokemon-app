@@ -10,9 +10,6 @@ const pokemonDetailReducer = createReducer(initialState, builder => {
         .addCase(selectPokemon.fulfilled, (state, action) => {
             state.selectedPokemon = action.payload
         })
-        .addCase(selectPokemon.rejected, (state, action) => {
-            state.selectedPokemon = '';
-        })
         .addCase(closeDetail, (state, action) => {
             state.selectedPokemon = null;
         })
