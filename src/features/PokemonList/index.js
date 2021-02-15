@@ -7,57 +7,57 @@ import {disableFilter} from '../ItemList/actions';
 
 const PokemonList = () => {
 
-    const { page, isLoading, pokemonsFiltered, filtering } = useSelector(state => state.pokemon)
-    const dispatch = useDispatch();
+  const {page, isLoading, pokemonsFiltered, filtering} = useSelector(state => state.pokemon)
+  const dispatch = useDispatch();
 
-    const scrollRef = useRef(null);
-    const actualPage = useRef({})
+  const scrollRef = useRef(null);
+  const actualPage = useRef({})
 
-    actualPage.current = page
+  actualPage.current = page
 
-    const handleScroll = useCallback((entities, observer) => {
-        const target = entities[0];
-        if (target.isIntersecting && !isLoading && !filtering) {
-            dispatch(fetchPokemons(actualPage.current))
-        }
-    }, [dispatch, isLoading, filtering])
+  const handleScroll = useCallback((entities, observer) => {
+    const target = entities[0];
+    if (target.isIntersecting && !isLoading && !filtering) {
+      dispatch(fetchPokemons(actualPage.current))
+    }
+  }, [dispatch, isLoading, filtering])
 
-    useEffect(() => {
+  useEffect(() => {
 
-        dispatch(disableFilter())
+    dispatch(disableFilter())
 
-        let options = {
-            root: null,
-            rootMargin: '30px',
-            threshold: 1.0
-        }
+    let options = {
+      root: null,
+      rootMargin: '30px',
+      threshold: 1.0
+    }
 
-        let observer = new IntersectionObserver(
-            handleScroll,
-            options
-        );
+    let observer = new IntersectionObserver(
+      handleScroll,
+      options
+    );
 
-        observer.observe(scrollRef.current);
+    observer.observe(scrollRef.current);
 
-        return (() => {
-            observer.disconnect()
-        })
-    }, [dispatch, handleScroll])
+    return (() => {
+      observer.disconnect()
+    })
+  }, [dispatch, handleScroll])
 
-    const loadingStyle = { display: isLoading ? 'block' : 'none'};
+  const loadingStyle = {display: isLoading ? 'block' : 'none'};
 
-    return (
-        <div>
-            <div className={styles.pokemonList}>
-                { pokemonsFiltered.map( (pokemon, index) => (
-                    <Pokemon key={index} image={pokemon.url.match(/\d+/g)[1]} name={pokemon.name}/>
-                )) }
-            </div>
-            <div ref={scrollRef}>
-                <span style={loadingStyle}>Loading...</span>
-            </div>
-        </div>
-    )
+  return (
+    <div>
+      <div className={styles.pokemonList}>
+        {pokemonsFiltered.map((pokemon, index) => (
+          <Pokemon key={index} image={pokemon.url.match(/\d+/g)[1]} name={pokemon.name}/>
+        ))}
+      </div>
+      <div ref={scrollRef}>
+        <span style={loadingStyle}>Loading...</span>
+      </div>
+    </div>
+  )
 }
 
-export { PokemonList };
+export {PokemonList};

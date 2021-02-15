@@ -6,10 +6,10 @@ import itemsReducer from './features/ItemList/reducers'
 
 
 const reducer = {
-    pokemon: pokemonReducer,
-    pokemonSelected: pokemonDetailReducer,
-    pokemonComparison: pokemonComparisonReducer,
-    items: itemsReducer,
+  pokemon: pokemonReducer,
+  pokemonSelected: pokemonDetailReducer,
+  pokemonComparison: pokemonComparisonReducer,
+  items: itemsReducer,
 }
 
 const store = configureStore({reducer})

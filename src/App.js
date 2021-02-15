@@ -7,19 +7,19 @@ import {PokemonComparison} from './features/PokemonComparison';
 import {ItemList} from './features/ItemList';
 
 const App = () => {
-    return (
-        <Router>
-            <Navbar/>
-            <Route path='/' exact>
-                <PokemonList/>
-                <PokemonDetail/>
-                <PokemonComparison/>
-            </Route>
-            <Route path='/items'>
-                <ItemList/>
-            </Route>
-        </Router>
-    );
+  return (
+    <Router>
+      <Navbar/>
+      <Route path='/' exact>
+        <PokemonList/>
+        <PokemonDetail/>
+        <PokemonComparison/>
+      </Route>
+      <Route path='/items'>
+        <ItemList/>
+      </Route>
+    </Router>
+  );
 };
 
 export default App;

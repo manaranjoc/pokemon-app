@@ -1,139 +1,139 @@
 .modalBackground {
-    background-color: var(--modal-bg-color);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    display: flex;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+  background-color: var(--modal-bg-color);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
 .modal {
-    background-color: white;
-    opacity: 1;
-    border-radius: 10px;
-    overflow-y: auto;
-    width: 90vw;
-    height: 90vh;
+  background-color: white;
+  opacity: 1;
+  border-radius: 10px;
+  overflow-y: auto;
+  width: 90vw;
+  height: 90vh;
 }
 
 .separator {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 .characteristics {
-    display: grid;
-    margin: 1rem 0;
+  display: grid;
+  margin: 1rem 0;
 }
 
 .characteristicsTitle,
-.characteristicsText{
-    text-align: center;
-    margin: 0.3rem 0;
+.characteristicsText {
+  text-align: center;
+  margin: 0.3rem 0;
 }
 
 .characteristicsList {
-    margin: 0.3rem 0;
-    padding: 0;
-    text-align: center;
-    list-style: none;
+  margin: 0.3rem 0;
+  padding: 0;
+  text-align: center;
+  list-style: none;
 }
 
 .pokemonImage {
-    margin: 0 auto 0.3rem;
-    display: block;
-    width: 60vw;
+  margin: 0 auto 0.3rem;
+  display: block;
+  width: 60vw;
 }
 
 .descriptionContainer {
-    margin: 0 0.5rem;
+  margin: 0 0.5rem;
 }
 
 .name {
-    margin: 1rem 2rem;
-    font-size: 1.5rem;
+  margin: 1rem 2rem;
+  font-size: 1.5rem;
 }
 
 .closeButton {
-    background: transparent;
-    border: 0;
-    font-size: 1.5rem;
-    margin: 0 2rem;
-    cursor: pointer;
-    color: var(--subtitle-color);
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  margin: 0 2rem;
+  cursor: pointer;
+  color: var(--subtitle-color);
 }
 
 .header {
-    top: 0;
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    color: var(--subtitle-color);
+  top: 0;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--subtitle-color);
 }
 
 .comparisonButton {
-    background: transparent;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    cursor: pointer;
+  background: transparent;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  cursor: pointer;
 }
 
 .graph {
-    width: 90%;
-    height: 30%;
+  width: 90%;
+  height: 30%;
 }
 
-@media(min-width: 500px) {
-    .modal {
-        width: 80vw;
-        height: 90vh;
-    }
+@media (min-width: 500px) {
+  .modal {
+    width: 80vw;
+    height: 90vh;
+  }
 
-    .pokemonImage {
-        float: left;
-        margin: 0.3rem 2rem;
-        width: 20vw;
-    }
+  .pokemonImage {
+    float: left;
+    margin: 0.3rem 2rem;
+    width: 20vw;
+  }
 
-    .descriptionContainer {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
+  .descriptionContainer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 
-    .characteristicsContainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+  .characteristicsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
-    .comparisonButton {
-        grid-column: span 2;
-    }
+  .comparisonButton {
+    grid-column: span 2;
+  }
 
 }
 
-@media(min-width: 800px) {
-    .modal {
-        width: 50vw;
-    }
+@media (min-width: 800px) {
+  .modal {
+    width: 50vw;
+  }
 
-    .characteristicsContainer {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+  .characteristicsContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 
-    .comparisonButton {
-        grid-column: span 1;
-    }
+  .comparisonButton {
+    grid-column: span 1;
+  }
 
-    .characteristics {
-        grid-template-columns: 1fr 1fr;
-        margin: 0.2rem;
-    }
+  .characteristics {
+    grid-template-columns: 1fr 1fr;
+    margin: 0.2rem;
+  }
 }
