@@ -1,5 +1,5 @@
-import {createAction, createAsyncThunk} from "@reduxjs/toolkit";
-import {getPokemons} from "../../API/pokemonAPI";
+import {createAction, createAsyncThunk} from '@reduxjs/toolkit';
+import {getPokemons} from '../../API/pokemonAPI';
 
 export const fetchPokemons = createAsyncThunk(
     'pokemons/fetch',

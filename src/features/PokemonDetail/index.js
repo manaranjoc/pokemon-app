@@ -1,9 +1,9 @@
-import React, {useRef, useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import styles from "./PokemonDetail.module.css";
-import {closeDetail} from "./actions";
-import {addPokemonToComparison} from "../PokemonComparison/action";
-import Chart from "chart.js"
+import React, {useRef, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import styles from './PokemonDetail.module.css';
+import {closeDetail} from './actions';
+import {addPokemonToComparison} from '../PokemonComparison/action';
+import Chart from 'chart.js'
 
 
 const PokemonDetail = () => {
@@ -59,12 +59,12 @@ const PokemonDetail = () => {
 
     if (selectedPokemon !== null) {
         content = (
-            <div className={styles.modalBackground} onClick={closeModal} id="background">
+            <div className={styles.modalBackground} onClick={closeModal} id='background'>
                 <div className={styles.modal}>
                     <div className={styles.header} style={{backgroundColor: selectedPokemon.color}}>
                         <h3 className={styles.name}>{selectedPokemon.name.toUpperCase()}</h3>
-                        <button aria-label="Close" onClick={closeModal} id="close-button" className={styles.closeButton}>
-                            <span aria-hidden="true" id="close-button">x</span>
+                        <button aria-label='Close' onClick={closeModal} id='close-button' className={styles.closeButton}>
+                            <span aria-hidden='true' id='close-button'>x</span>
                         </button>
                     </div>
                     <div className={styles.descriptionContainer}>
@@ -111,7 +111,7 @@ const PokemonDetail = () => {
                         </div>
                     </div>
                     <hr className={styles.separator}/>
-                    <canvas ref={chart} width="100%" height="30vh"></canvas>
+                    <canvas ref={chart} width='100%' height='30vh'></canvas>
                 </div>
             </div>
         );

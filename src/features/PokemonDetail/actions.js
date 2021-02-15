@@ -1,9 +1,9 @@
-import {createAction, createAsyncThunk} from "@reduxjs/toolkit";
-import {getPokemon} from "../../API/pokemonAPI";
+import {createAction, createAsyncThunk} from '@reduxjs/toolkit';
+import {getPokemon} from '../../API/pokemonAPI';
 
 
 export const selectPokemon = createAsyncThunk(
-    "pokemons/select",
+    'pokemons/select',
     async (selectedId, thunkAPI) => {
         const [pokemon, description]  = await Promise.all(getPokemon(selectedId));
         return {
@@ -20,4 +20,4 @@ export const selectPokemon = createAsyncThunk(
     }
 );
 
-export const closeDetail = createAction("pokemons/close");
+export const closeDetail = createAction('pokemons/close');

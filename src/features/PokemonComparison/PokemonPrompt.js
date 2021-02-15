@@ -1,6 +1,6 @@
-import React from "react";
-import {useSelector} from "react-redux";
-import style from "./PokemonPrompt.module.css"
+import React from 'react';
+import {useSelector} from 'react-redux';
+import style from './PokemonPrompt.module.css'
 
 
 const PokemonPrompt = () => {

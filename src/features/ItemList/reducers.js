@@ -1,5 +1,5 @@
-import {createReducer} from "@reduxjs/toolkit";
-import {disableFilter, fetchItems, filterItems} from "./actions";
+import {createReducer} from '@reduxjs/toolkit';
+import {disableFilter, fetchItems, filterItems} from './actions';
 
 const initialState = {
     items: [],

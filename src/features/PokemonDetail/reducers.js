@@ -1,5 +1,5 @@
-import {createReducer} from "@reduxjs/toolkit";
-import {closeDetail, selectPokemon} from "./actions";
+import {createReducer} from '@reduxjs/toolkit';
+import {closeDetail, selectPokemon} from './actions';
 
 const initialState = {
     selectedPokemon: null,

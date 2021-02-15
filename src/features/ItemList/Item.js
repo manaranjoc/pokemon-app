@@ -1,5 +1,5 @@
-import React from "react"
-import styles from "./Item.module.css"
+import React from 'react'
+import styles from './Item.module.css'
 const {REACT_APP_IMAGES_ITEMS: URL_IMAGE} = process.env
 
 const Item = ({image, name}) => {

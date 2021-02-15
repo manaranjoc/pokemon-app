@@ -1,5 +1,5 @@
-import {createReducer} from "@reduxjs/toolkit";
-import {disableFilter, fetchPokemons, filterPokemons} from "./actions";
+import {createReducer} from '@reduxjs/toolkit';
+import {disableFilter, fetchPokemons, filterPokemons} from './actions';
 
 const initialState = {
     pokemons: [],

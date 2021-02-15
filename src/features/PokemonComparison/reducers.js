@@ -1,5 +1,5 @@
-import {createReducer} from "@reduxjs/toolkit";
-import {addPokemonToComparison, closeComparisonPokemons} from "./action";
+import {createReducer} from '@reduxjs/toolkit';
+import {addPokemonToComparison, closeComparisonPokemons} from './action';
 
 const initialState = {
     comparisonPokemons: [],

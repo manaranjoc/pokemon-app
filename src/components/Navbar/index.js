@@ -1,9 +1,9 @@
-import {NavLink, Route} from "react-router-dom";
-import styles from "./Navbar.module.css";
-import {useDispatch} from "react-redux";
-import {filterPokemons} from "../../features/PokemonList/actions";
-import {useRef} from "react";
-import {filterItems} from "../../features/ItemList/actions";
+import {NavLink, Route} from 'react-router-dom';
+import styles from './Navbar.module.css';
+import {useDispatch} from 'react-redux';
+import {filterPokemons} from '../../features/PokemonList/actions';
+import {useRef} from 'react';
+import {filterItems} from '../../features/ItemList/actions';
 
 const Navbar = () => {
 
@@ -26,7 +26,7 @@ const Navbar = () => {
                 <h3 className={styles.title}>PokéApp</h3>
                 <ul className={styles.links}>
                     <li className={styles.linkContainer}>
-                        <NavLink to="/" activeClassName={styles.navActive} className={styles.link} exact>
+                        <NavLink to='/' activeClassName={styles.navActive} className={styles.link} exact>
                             Pokemons
                         </NavLink>
                     </li>
@@ -37,10 +37,10 @@ const Navbar = () => {
             </div>
             <div>
                 <Route path='/' exact>
-                    <input ref={inputFilterPokemons} type="text" placeholder="Search" className={styles.searchbar} onChange={filterPokemonsInput}/>
+                    <input ref={inputFilterPokemons} type='text' placeholder='Search' className={styles.searchbar} onChange={filterPokemonsInput}/>
                 </Route>
                 <Route path='/items'>
-                    <input ref={inputFilterItems} type="text" placeholder="Search" className={styles.searchbar} onChange={filterItemsInput}/>
+                    <input ref={inputFilterItems} type='text' placeholder='Search' className={styles.searchbar} onChange={filterItemsInput}/>
                 </Route>
             </div>
         </nav>

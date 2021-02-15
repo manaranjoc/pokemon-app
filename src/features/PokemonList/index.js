@@ -1,9 +1,9 @@
-import React, {useEffect, useRef, useCallback} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import Pokemon from "./Pokemon";
-import styles from "./PokemonList.module.css"
-import {fetchPokemons} from "./actions";
-import {disableFilter} from "../ItemList/actions";
+import React, {useEffect, useRef, useCallback} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import Pokemon from './Pokemon';
+import styles from './PokemonList.module.css'
+import {fetchPokemons} from './actions';
+import {disableFilter} from '../ItemList/actions';
 
 const PokemonList = () => {
 
@@ -28,7 +28,7 @@ const PokemonList = () => {
 
         let options = {
             root: null,
-            rootMargin: "30px",
+            rootMargin: '30px',
             threshold: 1.0
         }
 
@@ -44,7 +44,7 @@ const PokemonList = () => {
         })
     }, [dispatch, handleScroll])
 
-    const loadingStyle = { display: isLoading ? "block" : "none"};
+    const loadingStyle = { display: isLoading ? 'block' : 'none'};
 
     return (
         <div>

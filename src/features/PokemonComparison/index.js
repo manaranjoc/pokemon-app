@@ -1,10 +1,10 @@
-import styles from "./PokemonComparison.module.css";
-import {useDispatch, useSelector} from "react-redux";
-import {closeComparisonPokemons} from "./action";
-import {PokemonPrompt} from "./PokemonPrompt";
-import React, {useEffect, useRef} from "react";
-import Chart from "chart.js";
-import Color from "color"
+import styles from './PokemonComparison.module.css';
+import {useDispatch, useSelector} from 'react-redux';
+import {closeComparisonPokemons} from './action';
+import {PokemonPrompt} from './PokemonPrompt';
+import React, {useEffect, useRef} from 'react';
+import Chart from 'chart.js';
+import Color from 'color'
 
 
 const PokemonComparison = () => {
@@ -58,15 +58,15 @@ const PokemonComparison = () => {
 
     if (comparisonPokemons.length === 2) {
         content = (
-            <div className={styles.modalBackground} onClick={closeComparison} id="background">
+            <div className={styles.modalBackground} onClick={closeComparison} id='background'>
                 <div className={styles.modal}>
                     <div className={styles.header}>
                         <h3 className={styles.name}>
                             {`${comparisonPokemons[0].name.toUpperCase()} VS. ${comparisonPokemons[1].name.toUpperCase()}`}
                         </h3>
-                        <button aria-label="Close" onClick={closeComparison} id="close-button"
+                        <button aria-label='Close' onClick={closeComparison} id='close-button'
                                 className={styles.closeButton}>
-                            <span aria-hidden="true" id="close-button">x</span>
+                            <span aria-hidden='true' id='close-button'>x</span>
                         </button>
                     </div>
                     <hr className={styles.separator}/>
@@ -107,7 +107,7 @@ const PokemonComparison = () => {
                         </div>
                     </div>
                     <hr className={styles.separator}/>
-                    <canvas ref={chart} width="100%" height="30vh"></canvas>
+                    <canvas ref={chart} width='100%' height='30vh'></canvas>
 
                 </div>
             </div>

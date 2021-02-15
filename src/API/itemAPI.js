@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from 'axios'
 
 const {REACT_APP_POKEMON: BASE_URL} = process.env;
 
