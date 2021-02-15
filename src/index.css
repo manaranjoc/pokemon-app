@@ -16,4 +16,5 @@ body {
   --subtitle-color: #d3d3d3;
   --border-dark-color: #000000;
   --modal-bg-color: rgba(0, 0, 0, 0.5);
+  --modal-inside-bg-color: #ffffff;
 }

@@ -12,7 +12,7 @@
 }
 
 .modal {
-  background-color: white;
+  background-color: var(--modal-inside-bg-color);
   opacity: 1;
   border-radius: 10px;
   overflow-y: auto;
