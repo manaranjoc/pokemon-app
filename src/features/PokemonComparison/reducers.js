@@ -3,7 +3,7 @@ import {addPokemonToComparison, closeComparisonPokemons} from './action';
 
 const initialState = {
   comparisonPokemons: [],
-}
+};
 
 const pokemonComparisonReducer = createReducer(initialState, builder => {
   builder
@@ -14,8 +14,8 @@ const pokemonComparisonReducer = createReducer(initialState, builder => {
       state.comparisonPokemons.push(action.payload);
     })
     .addCase(closeComparisonPokemons, (state, action) => {
-      state.comparisonPokemons = []
-    })
-})
+      state.comparisonPokemons = [];
+    });
+});
 
 export default pokemonComparisonReducer;

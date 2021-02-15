@@ -4,8 +4,8 @@ import {getPokemons} from '../../API/pokemonAPI';
 export const fetchPokemons = createAsyncThunk(
   'pokemons/fetch',
   async (page, thunkAPI) => {
-    const response = await getPokemons(page)
-    return response.data.results
+    const response = await getPokemons(page);
+    return response.data.results;
   }
 );
 
@@ -14,7 +14,7 @@ export const filterPokemons = createAction('pokemons/filter', (filterBy) => {
     payload: {
       filterBy
     }
-  }
-})
+  };
+});
 
 export const disableFilter = createAction('pokemons/disableFilter');

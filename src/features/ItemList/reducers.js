@@ -7,7 +7,7 @@ const initialState = {
   page: 0,
   isLoading: false,
   filtering: false,
-}
+};
 
 const itemsReducer = createReducer(initialState, (builder) => {
   builder
@@ -26,11 +26,11 @@ const itemsReducer = createReducer(initialState, (builder) => {
       } else {
         state.filtering = true;
       }
-      state.itemsFiltered = state.items.filter((item) => item.name.includes(action.payload.filterBy))
+      state.itemsFiltered = state.items.filter((item) => item.name.includes(action.payload.filterBy));
     })
     .addCase(disableFilter, (state, actions) => {
       state.filtering = false;
-    })
-})
+    });
+});
 
 export default itemsReducer;

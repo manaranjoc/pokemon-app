@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import style from './PokemonPrompt.module.css'
+import style from './PokemonPrompt.module.css';
 
 
 const PokemonPrompt = () => {
@@ -16,7 +16,7 @@ const PokemonPrompt = () => {
         <hr/>
         <h6 className={style.modalSubtitle}>{comparisonPokemons[0].name.toUpperCase()}</h6>
       </div>
-    )
+    );
   } else {
     modal = null;
   }
@@ -25,7 +25,7 @@ const PokemonPrompt = () => {
     <React.Fragment>
       {modal}
     </React.Fragment>
-  )
-}
+  );
+};
 
 export {PokemonPrompt};

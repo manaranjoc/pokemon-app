@@ -13,12 +13,12 @@ const Navbar = () => {
   const inputFilterItems = useRef(null);
 
   const filterPokemonsInput = () => {
-    dispatch(filterPokemons(inputFilterPokemons.current.value))
-  }
+    dispatch(filterPokemons(inputFilterPokemons.current.value));
+  };
 
   const filterItemsInput = () => {
-    dispatch(filterItems(inputFilterItems.current.value))
-  }
+    dispatch(filterItems(inputFilterItems.current.value));
+  };
 
   return (
     <nav className={styles.navbar}>
@@ -46,7 +46,7 @@ const Navbar = () => {
         </Route>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Navbar;

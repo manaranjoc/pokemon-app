@@ -4,14 +4,14 @@ import {closeComparisonPokemons} from './action';
 import {PokemonPrompt} from './PokemonPrompt';
 import React, {useEffect, useRef} from 'react';
 import Chart from 'chart.js';
-import Color from 'color'
+import Color from 'color';
 
 
 const PokemonComparison = () => {
 
   const {comparisonPokemons} = useSelector(state => state.pokemonComparison);
 
-  const dispatcher = useDispatch()
+  const dispatcher = useDispatch();
 
   const chart = useRef();
 
@@ -43,16 +43,16 @@ const PokemonComparison = () => {
             }]
           }
         }
-      })
+      });
 
     }
-  }, [comparisonPokemons])
+  }, [comparisonPokemons]);
 
   const closeComparison = (event) => {
     if (event.target.id !== '') {
-      dispatcher(closeComparisonPokemons())
+      dispatcher(closeComparisonPokemons());
     }
-  }
+  };
 
   let content = null;
 
@@ -86,7 +86,7 @@ const PokemonComparison = () => {
                 {comparisonPokemons[0].weight} kg
               </p>
               {comparisonPokemons[0].abilities.map((ability) => {
-                return (<p key={ability.slot}>{ability.ability.name}</p>)
+                return (<p key={ability.slot}>{ability.ability.name}</p>);
               })}
             </div>
             <div className={styles.characteristics}>
@@ -102,7 +102,7 @@ const PokemonComparison = () => {
                 {comparisonPokemons[1].weight} kg
               </p>
               {comparisonPokemons[1].abilities.map((ability) => {
-                return (<p key={ability.slot}>{ability.ability.name}</p>)
+                return (<p key={ability.slot}>{ability.ability.name}</p>);
               })}
             </div>
           </div>
@@ -121,7 +121,7 @@ const PokemonComparison = () => {
       {content}
       <PokemonPrompt/>
     </div>
-  )
-}
+  );
+};
 
 export {PokemonComparison};

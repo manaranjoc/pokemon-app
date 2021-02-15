@@ -1,9 +1,9 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import styles from './PokemonDetail.module.css';
 import {closeDetail} from './actions';
 import {addPokemonToComparison} from '../PokemonComparison/action';
-import Chart from 'chart.js'
+import Chart from 'chart.js';
 
 
 const PokemonDetail = () => {
@@ -37,21 +37,21 @@ const PokemonDetail = () => {
             }]
           }
         }
-      })
+      });
 
     }
-  }, [selectedPokemon])
+  }, [selectedPokemon]);
 
   const closeModal = (event) => {
     if (event.target.id !== '') {
-      dispatcher(closeDetail())
+      dispatcher(closeDetail());
     }
-  }
+  };
 
   const addComparison = () => {
-    dispatcher(addPokemonToComparison(selectedPokemon))
-    dispatcher(closeDetail())
-  }
+    dispatcher(addPokemonToComparison(selectedPokemon));
+    dispatcher(closeDetail());
+  };
 
 
   let content = null;
@@ -91,7 +91,7 @@ const PokemonDetail = () => {
                   <h4 className={styles.characteristicsTitle}>Abilities</h4>
                   <ul className={styles.characteristicsList}>
                     {selectedPokemon.abilities.map((ability) => {
-                      return (<li key={ability.slot}>{ability.ability.name}</li>)
+                      return (<li key={ability.slot}>{ability.ability.name}</li>);
                     })}
                   </ul>
                 </div>
@@ -99,7 +99,7 @@ const PokemonDetail = () => {
                   <h4 className={styles.characteristicsTitle}>Type</h4>
                   <ul className={styles.characteristicsList}>
                     {selectedPokemon.types.map((type) => {
-                      return (<li key={type.slot}>{type.type.name}</li>)
+                      return (<li key={type.slot}>{type.type.name}</li>);
                     })}
                   </ul>
                 </div>
@@ -123,8 +123,8 @@ const PokemonDetail = () => {
     <div>
       {content}
     </div>
-  )
+  );
 
-}
+};
 
 export {PokemonDetail};

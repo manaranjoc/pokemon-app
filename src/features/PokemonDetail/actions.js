@@ -16,7 +16,7 @@ export const selectPokemon = createAsyncThunk(
       description: description.data.flavor_text_entries.find(text => text.language.name === 'en').flavor_text,
       color: description.data.color.name,
       image: pokemon.data.sprites.front_default,
-    }
+    };
   }
 );
 
