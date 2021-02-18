@@ -1,0 +1,21 @@
+
+.pokemonImage {
+  width: 100%;
+  margin: 0;
+  display: block;
+}
+
+.pokemonName {
+  text-align: center;
+  background-color: var(--main-bg-color);
+  margin: 0;
+  padding: 1rem;
+}
+
+.pokemonContainer {
+  border: 1px var(--border-color) solid;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+

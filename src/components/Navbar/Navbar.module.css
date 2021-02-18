@@ -1,0 +1,59 @@
+
+.navbar {
+
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: var(--main-bg-color);
+  position: sticky;
+  top: 0;
+}
+
+.linksContainer {
+  display: flex;
+  align-items: baseline;
+}
+
+.title {
+  display: inline-block;
+  font-weight: 400;
+}
+
+.links {
+  padding: 0 1rem;
+}
+
+.link {
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text-color);
+  margin: 0 0.2rem;
+}
+
+.linkContainer {
+  display: inline-block;
+}
+
+.searchbar {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px var(--border-color) solid;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.searchbar::placeholder {
+  opacity: 0.7;
+}
+
+.navActive {
+  border-bottom: 2px var(--border-dark-color) solid;
+}
+
+@media (min-width: 500px) {
+  .navbar {
+    display: flex;
+  }
+}

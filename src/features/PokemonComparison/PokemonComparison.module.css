@@ -1,0 +1,103 @@
+.modalBackground {
+  background-color: var(--modal-bg-color);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: var(--secondary-bg-color);
+  opacity: 1;
+  width: 90vw;
+  height: 90vh;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.separator {
+  opacity: 0.2;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.name {
+  margin: 1rem 2rem;
+  font-size: 1.5rem;
+}
+
+.closeButton {
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  margin: 0 2rem;
+  cursor: pointer;
+}
+
+.pokemonImage {
+  width: 100%;
+}
+
+.imagesContent {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 1rem;
+}
+
+.descriptionContainer {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.characteristics {
+  text-align: center;
+  flex: 1;
+}
+
+.characteristics:first-child {
+  text-align: right;
+}
+
+.characteristics:last-child {
+  text-align: left;
+}
+
+@media (min-width: 500px) {
+  .modal {
+    width: 70vw;
+    height: 90vh;
+  }
+
+  .pokemonImage {
+    width: 30%;
+  }
+
+  .imagesContent {
+    margin: 1rem 7rem;
+  }
+}
+
+@media (min-width: 800px) {
+
+  .modal {
+    width: 50vw;
+  }
+
+  .pokemonImage {
+    width: 30%;
+  }
+
+  .imagesContent {
+    margin: 1rem 9rem;
+  }
+}
